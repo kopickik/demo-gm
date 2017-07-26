@@ -350,3 +350,48 @@ ul.banner-social-buttons {
     background-image: url("../images/lk-arms-down.png"); }
   100% {
     background-image: url("../images/lk-look-right.png"); } }
+
+.guile {
+  height: 91px;
+  width: 54px;
+  background: url("../images/guile.png") 0 -15px no-repeat; }
+  .guile.idle {
+    animation: guile-idle 3s steps(1); }
+  .guile.walking {
+    animation: guile-walking 600ms steps(1) infinite; }
+  .guile.walking:hover {
+    animation: guile-punch-f 900ms steps(1) 3; }
+
+@keyframes guile-idle {
+  33% {
+    background-position: -54px -16px; }
+  66% {
+    background-position: -104px -16px; }
+  99% {
+    background-position: 0 -16px; } }
+
+@keyframes guile-walking {
+  20% {
+    background-position: -162px -16px; }
+  40% {
+    background-position: -215px -16px; }
+  60% {
+    background-position: -268px -16px; }
+  80% {
+    background-position: -323px -16px; }
+  100% {
+    background-position: -381px -16px; } }
+
+@keyframes guile-punch-f {
+  20% {
+    background-position: -381px -16px; }
+  40% {
+    background-position: -465px -138px; }
+  60% {
+    background-position: -516px -138px; }
+  80% {
+    background-position: -564px -138px; }
+  90% {
+    background-position: -652px -138px; }
+  99% {
+    background-position: -703px -138px; } }

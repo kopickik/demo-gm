@@ -1,6 +1,6 @@
 (function(velocity) {
     'use strict';
-    function HomeController($log) {
+    function HomeController($log, $state, $element) {
         var vm = this;
 
         // vm.moveWedge = function() {
