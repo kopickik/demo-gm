@@ -3,14 +3,25 @@
     function HomeController($log, $state, $element) {
         var vm = this;
 
-        // vm.moveWedge = function() {
-        //   const wedge = $('.wedge');
-        //   return wedge.velocity({
-        //       backgroundPositionX: '348px',
-        //       backgroundPositionY: '698px',
-        //       translateY: 40}, 5000);
-        // }
-        // vm.moveWedge('.wedge')
+        function initiateEntrance() {
+          var wedge = $('#wedge');
+          wedge.velocity({
+            backgroundPositionX: -200,
+            backgroundPositionY: -580
+          }, {
+            easing: [5],
+            duration: 2000
+          });
+          wedge.velocity({
+            translateX: '+=5px',
+            backgroundPositionY: -660
+          }, {
+            easing: [2],
+            duration: 500,
+            loop: 5
+          })
+        }
+        initiateEntrance();
     }
 
     angular.module('dgmApp').controller('homeCtrl', HomeController);

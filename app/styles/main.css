@@ -302,6 +302,11 @@ ul.banner-social-buttons {
   width: 100px;
   border: 1px solid rgba(255, 255, 255, 0.69); }
 
+#wedge {
+  height: 40px;
+  width: 36px;
+  background: url("../images/wedge01.png") 0 -580px no-repeat; }
+
 .wedge {
   height: 40px;
   width: 40px;
