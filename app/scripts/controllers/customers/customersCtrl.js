@@ -1,4 +1,4 @@
-(function (_) {
+(function () {
   'use strict';
   function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query(function (data) {
