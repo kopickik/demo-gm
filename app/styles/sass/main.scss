@@ -291,6 +291,10 @@ ul.banner-social-buttons {
     font-size: 1rem;
     font-family: Arial, sans-serif;
     color: lime;
+    @include animation('fade-in .2s');
+    &.ng-hide-add-active {
+    @include animation('fade-out .2s');
+  }
 }
 
 .footer {

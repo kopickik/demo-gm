@@ -99,17 +99,21 @@
 
 // usage
 
-@include keyframes(slide-down) {
-  0% {
-    opacity: 1;
-  }
-  90% {
+@include keyframes(fade-in) {
+  from {
     opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
 }
-
-@include keyframes(spiral) {
-
+@include keyframes(fade-out) {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @include keyframes(noise-anim-2) {
@@ -136,9 +140,3 @@
   100%{clip:rect(48px,9999px,30px,0);}
 }
 
-.element {
-  width: 100px;
-  height: 100px;
-  background: black;
-  @include animation('slide-down 5s 3');
-}

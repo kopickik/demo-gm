@@ -15,8 +15,8 @@
   <tbody>
     <tr ng-repeat="customer in customers">
       <td>{{customer.firstName + ' ' + customer.lastName}} <br>
-        <small>full details:</small> <input type="checkbox" ng-model="customer.customerFull" ng-change="detailsToggled()" aria-label="Toggle ngShow">&nbsp;&nbsp;
-        <span class="full-details check-element animate-show-hide" ng-show="customer.customerFull">
+        <small>full details:</small> <input type="checkbox" ng-model="customer.customerFull" aria-label="customer details">&nbsp;&nbsp;
+        <span class="full-details" ng-show="customer.customerFull">
           {{customer.email}} • {{customer.streetAddress}} • {{customer.phoneNumber}}
         </span>
       <td>
