@@ -556,7 +556,7 @@ ul.banner-social-buttons {
 #wedge {
   height: 40px;
   width: 36px;
-  background: url("../images/wedge01.png") 0 -580px no-repeat; }
+  background: url("../images/wedge01.png") -200px -580px no-repeat; }
 
 #stage {
   width: 216px; }

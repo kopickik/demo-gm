@@ -1,43 +1,86 @@
 (function(velocity) {
     'use strict';
     function HomeController($log, $state, $element, $scope) {
-        var vm = this;
+        var vm = this,
+            wedge = $('#wedge'),
+            stage = $('#stage');
 
-        function walkEast() {
-          var wedge = $('#wedge'),
-              stage = $('#stage');
+        function stageInitialize() {
+          stage.velocity({
+            translateX: 0
+          }, 1)
+        };
 
+        function stageRight() {
+          stage.velocity({
+            translateX: '-=144px'
+          }, { easing: 'linear', duration: 2500 });
+        }
+
+        function stageLeft() {
+          stage.velocity({
+            translateX: '+=144px'// 36 x 4 steps + 36
+          }, { easing: 'linear', duration: 2500 });
+        }
+
+        function magitekInitialize() {
           wedge.velocity({
+            scale: 2.8,
             backgroundPositionX: -200,
             backgroundPositionY: -580
-          }, {
-            easing: [5],
-            duration: 2000
-          });
+          }, 1)
+        };
+
+        function magitekInitializeW() {
           wedge.velocity({
-            backgroundPositionY: -660
-          }, {
-            easing: [2],
-            duration: 400,
-            loop: 5
-          });
-          stage.velocity({
-            translateX: '+=216px'// 36 x 5 steps + 36
-          }, {
-            easing: 'easeInOutBounce',
-            duration: 4000,
-            delay: 2000
-          });
-          wedge.velocity({
+            scale: 2.8,
+            backgroundPositionX: -160,
+            backgroundPositionY: -580
+          }, 1)
+        };
+
+        function walk() {
+          wedge
+          .velocity({backgroundPositionY: [-660]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          .velocity({backgroundPositionY: [-620]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          .velocity({backgroundPositionY: [-660]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          .velocity({backgroundPositionY: [-620]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          .velocity({backgroundPositionY: [-660]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          .velocity({backgroundPositionY: [-620]}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
+          // stage.velocity({
+          //   translateX: '+=144px'// 36 x 4 steps + 36
+          // }, { easing: 'linear', duration: 2500 });
+          .velocity({
             backgroundPositionX: 0,
             backgroundPositionY: -580
-          }, [1])
+          }, 1)
+        }
+
+        function walkEast() {
+          magitekInitialize()
+          walk(stageLeft())
+        }
+
+        function walkWest() {
+          magitekInitializeW()
+          walk(stageRight())
         }
 
         function initiateEntrance() {
-          walkEast()
+          stageInitialize()
+          magitekInitialize()
+          walk(stageLeft())
         }
+
         $scope.walkEast = walkEast;
+        $scope.walkWest = walkWest;
+        $scope.resetMagitek = stageInitialize;
         initiateEntrance();
     }
 
