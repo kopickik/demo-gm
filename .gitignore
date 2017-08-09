@@ -1,3 +1,4 @@
+.env
 bower_components
 dist
 node_modules
@@ -6,3 +7,4 @@ test
 .idea
 .DS_Store
 data/db
+app/images
