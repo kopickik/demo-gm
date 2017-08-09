@@ -22,9 +22,7 @@ body {
 }
 
 a {
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    @include transition('all .2s ease-in-out')
     &:hover,
     &:focus {
         text-decoration: none;
@@ -36,7 +34,6 @@ a {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(white, 0.3);
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: black;
     .navbar-toggle {
         padding: 4px 6px;
@@ -267,10 +264,6 @@ ul.banner-social-buttons {
     }
 }
 
-.content-container {
-  flex: 1 0 auto;
-}
-
 .table-hover {
     tbody {
         tr:hover {
@@ -355,6 +348,10 @@ ul.banner-social-buttons {
   height: 40px;
   width: 36px;
   background: url('../images/wedge01.png') 0 -580px no-repeat;
+}
+
+#stage {
+  width: 216px;
 }
 
 .wedge {

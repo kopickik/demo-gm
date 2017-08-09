@@ -278,6 +278,9 @@
   100% {
     clip: rect(48px, 9999px, 30px, 0); } }
 
+.container {
+  flex: 1 0 auto; }
+
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
@@ -309,9 +312,10 @@ body {
   font-family: Georgia, Times, "Times New Roman", serif; }
 
 a {
-  -webkit-transition: all .2s ease-in-out;
-  -moz-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out; }
+  -moz-transition: "all .2s ease-in-out";
+  -o-transition: "all .2s ease-in-out";
+  -webkit-transition: "all .2s ease-in-out";
+  transition: "all .2s ease-in-out"; }
   a:hover, a:focus {
     text-decoration: none;
     color: #005fa9; }
@@ -320,7 +324,6 @@ a {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
-  font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: black; }
   .navbar-custom .navbar-toggle {
     padding: 4px 6px;
@@ -491,9 +494,6 @@ ul.banner-social-buttons {
       ul.banner-social-buttons li:last-child {
         margin-bottom: 0; } }
 
-.content-container {
-  flex: 1 0 auto; }
-
 .table-hover tbody tr:hover {
   background-color: #373737; }
 
@@ -557,6 +557,9 @@ ul.banner-social-buttons {
   height: 40px;
   width: 36px;
   background: url("../images/wedge01.png") 0 -580px no-repeat; }
+
+#stage {
+  width: 216px; }
 
 .wedge {
   height: 40px;

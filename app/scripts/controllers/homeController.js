@@ -1,11 +1,12 @@
 (function(velocity) {
     'use strict';
-    function HomeController($log, $state, $element) {
+    function HomeController($log, $state, $element, $scope) {
         var vm = this;
 
-        function initiateEntrance() {
-          var wedge = $('#wedge');
-          var stage = $('#stage');
+        function walkEast() {
+          var wedge = $('#wedge'),
+              stage = $('#stage');
+
           wedge.velocity({
             backgroundPositionX: -200,
             backgroundPositionY: -580
@@ -21,9 +22,9 @@
             loop: 5
           });
           stage.velocity({
-            translateX: [216]// 36 x 5 steps + 36
+            translateX: '+=216px'// 36 x 5 steps + 36
           }, {
-            easing: 'easeInOutSine',
+            easing: 'easeInOutBounce',
             duration: 4000,
             delay: 2000
           });
@@ -32,6 +33,11 @@
             backgroundPositionY: -580
           }, [1])
         }
+
+        function initiateEntrance() {
+          walkEast()
+        }
+        $scope.walkEast = walkEast;
         initiateEntrance();
     }
 
