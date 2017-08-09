@@ -9,8 +9,9 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
 const Customer = require('./models/Customer')
-const dbConfig = require('./config/db')
 const routes = require('./routes')
+
+require('dotenv').config()
 
 const app = express()
 
@@ -33,7 +34,7 @@ app.use(function (req, res, next) {
 
 // Base setup (db)
 mongoose.Promise = global.Promise
-mongoose.connect(dbConfig.url)
+mongoose.connect(process.env.DB_URL, {useMongoClient: true})
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
