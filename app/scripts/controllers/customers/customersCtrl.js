@@ -4,7 +4,7 @@
     $scope.customers = Customer.query(function (data) {
       AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
     }, function (err) {
-      AlertsService.add('warning', 'Problem with the server.', 'exclamation-circle')
+      AlertsService.add('warning', err, 'exclamation-circle')
     });
 
     $scope.showFullDetails = function () {

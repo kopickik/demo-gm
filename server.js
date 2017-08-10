@@ -1,17 +1,16 @@
 'use strict'
 
+const env = require('./lib/env')
+const boot = require('./lib/boot')// db
 const express = require('express')
 const path = require('path')
 const favicon = require('serve-favicon')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const helmet = require('helmet')
 const Customer = require('./models/Customer')
 const routes = require('./routes')
-
-require('dotenv').config()
 
 const app = express()
 
@@ -33,11 +32,15 @@ app.use(function (req, res, next) {
 })
 
 // Base setup (db)
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.DB_URL, {useMongoClient: true})
 
-const db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+boot()
+
+app.on('event:initial_db_connection_failed', function () {
+  console.log('this thing heard your event.')
+})
+app.on('event:get_all_customers', function () {
+  console.log('Trying to Fetch all customers.')
+})
 
 app.use(express.static(__dirname + '/app'))
 app.use(logger('short'))
