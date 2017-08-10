@@ -7,5 +7,4 @@ test
 .idea
 .DS_Store
 data/db
-app/images
 .env.json
