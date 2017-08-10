@@ -35,15 +35,8 @@ app.use(function (req, res, next) {
 
 boot()
 
-app.on('event:initial_db_connection_failed', function () {
-  console.log('this thing heard your event.')
-})
-app.on('event:get_all_customers', function () {
-  console.log('Trying to Fetch all customers.')
-})
-
 app.use(express.static(__dirname + '/app'))
-app.use(logger('short'))
+app.use(logger('dev'))
 
 app.use('/api', routes)// all of our API routes
 

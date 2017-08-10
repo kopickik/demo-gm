@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   Customer.find({}).then(function (customers) {
     res.status(200).send(customers)
   }, function (err) {
-    res.status(404).send('FOOBAR');
+    res.status(500).send({message: 'Problem connecting to the database.'})
     next()
   })
 };
