@@ -1,5 +1,7 @@
 'use strict'
 
+const env = require('./lib/env')
+const boot = require('./lib/boot')// db
 const express = require('express')
 const path = require('path')
 const favicon = require('serve-favicon')
@@ -10,8 +12,6 @@ const mongoose = require('mongoose')
 const helmet = require('helmet')
 const Customer = require('./models/Customer')
 const routes = require('./routes')
-
-require('dotenv').config()
 
 const app = express()
 
@@ -33,14 +33,11 @@ app.use(function (req, res, next) {
 })
 
 // Base setup (db)
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.DB_URL, {useMongoClient: true})
 
-const db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+boot()
 
-app.use(express.static(__dirname + '/app'))
-app.use(logger('short'))
+// app.use(express.static(__dirname + '/app'))
+app.use(logger('dev'))
 
 app.use('/api', routes)// all of our API routes
 

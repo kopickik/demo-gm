@@ -7,10 +7,11 @@ const single = require('./single')
 const create = require('./create')
 const update = require('./update')
 const remove = require('./remove')
+const cache = require('../middleware/cache')
 
 router.use(bodyParser.urlencoded({ extended: true }));
 
-router.get('/', all)
+router.get('/', cache(60), all)
 router.post('/', create)
 router.get('/:customerId', single)
 router.put('/:customerId', update)
