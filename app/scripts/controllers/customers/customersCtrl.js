@@ -2,9 +2,9 @@
   'use strict';
   function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query(function (data) {
-      AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
-    }, function (err) {
-      AlertsService.add('warning', 'Problem with the server.', 'exclamation-circle')
+      // AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
+    }, function (resp) {
+      AlertsService.add('warning', resp.data.message, 'exclamation-circle')
     });
 
     $scope.showFullDetails = function () {
