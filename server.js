@@ -36,13 +36,7 @@ app.use(function (req, res, next) {
 
 boot()
 
-app.on('event:get_all_customers', function (req, res) {
-  if (!req.fresh) {
-    res.status(304)
-  }
-})
-
-app.use(express.static(__dirname + '/app'))
+// app.use(express.static(__dirname + '/app'))
 app.use(logger('dev'))
 
 app.use('/api', routes)// all of our API routes
