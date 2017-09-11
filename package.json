@@ -7,6 +7,7 @@
     "connect-cache-control": "^1.0.0",
     "contra": "^1.9.4",
     "cookie-parser": "^1.4.3",
+    "credential": "^2.0.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-error-handler": "^1.1.0",
@@ -59,6 +60,7 @@
     "jshint-stylish": "^1.0.0",
     "load-grunt-tasks": "^3.1.0",
     "mongoose": "^4.11.6",
+    "tap": "^10.7.2",
     "time-grunt": "^1.0.0"
   },
   "engines": {
