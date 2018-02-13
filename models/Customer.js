@@ -1,8 +1,7 @@
-'use strict'
-
 const mongoose = require('mongoose')
 const ObjectId = mongoose.Schema.Types.ObjectId
 require('mongoose-type-email')
+
 const schema = new mongoose.Schema({
   author: { type: ObjectId, index: { unique: false }, require: true, ref: `User`},
   created: { type: Date, index: { unique: false }, require: true, 'default': Date.now },

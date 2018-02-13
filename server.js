@@ -10,7 +10,6 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
-const Customer = require('./models/Customer')
 const routes = require('./routes')
 
 const app = express()
@@ -41,6 +40,5 @@ app.use(logger('dev'))
 
 app.use('/api', routes)// all of our API routes
 
-app.listen(port)
-console.log('Express app listening on port ' + port)
+app.listen(port, () => (null, console.log(`Express app listening on ${port}`)))
 

@@ -3,7 +3,7 @@
     var dgmApp = angular.module('dgmApp', ['ngAnimate', 'ngResource', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router']);
     dgmApp.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', { // Home
-            url: 'home',
+            url: '/home',
             templateUrl: './views/home.html',
             data: { pageTitle: 'Welcome' },
             controller: 'homeCtrl',
@@ -55,12 +55,12 @@
 
     // *** debug the app by uncommenting these lines *** //
 
-    dgmApp.config(function ($logProvider) {
-        $logProvider.debugEnabled(true);
-    });
+    // dgmApp.config(function ($logProvider) {
+    //     $logProvider.debugEnabled(true);
+    // });
 
-    dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
-        $rootScope.$state = $state;
-    }]);
+    // dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
+    //     $rootScope.$state = $state;
+    // }]);
 
 })();

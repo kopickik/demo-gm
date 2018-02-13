@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+
   function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query(function (data) {
       // AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
@@ -16,9 +17,12 @@
     $scope.deleteCustomer = function (customer) {
       if (popupService.showPopup('Really delete this?')) {
         customer.$remove(function (resp) {
-          AlertsService.add('success', resp.message, 'cut', 2000)
-          $state.go('home')
-        });
+          // assume successful deletion
+        })
+        .then((resp) => {
+          AlertsService.add('success', resp.message, 'cut', 3000)
+          $scope.refresh();
+        })
       }
     };
   }

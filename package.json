@@ -62,7 +62,8 @@
     "load-grunt-tasks": "^3.1.0",
     "mongoose": "^4.11.6",
     "tap": "^10.7.2",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "winston-mongodb": "^3.0.1"
   },
   "engines": {
     "node": ">=0.10.0"
