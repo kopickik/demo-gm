@@ -1,0 +1,10 @@
+.d-pad {
+  display: flex;
+  height: 240px;
+
+  .up,.left,.right,.down {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+  }
+}
