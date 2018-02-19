@@ -7,8 +7,8 @@
     }, {
       'get': {
         method: 'get',
-        cache: true,
-        transformResponse: []
+        // cache: true,
+        // transformResponse: []
       },
       'update': {
         method: 'put',
