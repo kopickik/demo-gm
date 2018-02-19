@@ -1,0 +1,324 @@
+@import "variables";
+@import "mixins";
+@import "overrides";
+
+// taken from: https://github.com/BlackrockDigital/startbootstrap-grayscale
+
+html {
+  font-size: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #111;
+  color: #fafafa;
+  font-size: 1.5rem;
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+a {
+    @include transition('all .2s ease-in-out')
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: darken($color-primary-0,20%);
+    }
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(white, 0.3);
+    text-transform: uppercase;
+    background-color: black;
+    .navbar-toggle {
+        padding: 4px 6px;
+        font-size: 16px;
+        color: white;
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+    .navbar-brand {
+        font-weight: 700;
+        &:focus {
+            outline: none;
+        }
+    }
+    a {
+        color: white;
+    }
+    .nav {
+        li {
+            a {
+                -webkit-transition: background .3s ease-in-out;
+                -moz-transition: background .3s ease-in-out;
+                transition: background .3s ease-in-out;
+                &:hover {
+                    color: rgba(white, 0.8);
+                    outline: none;
+                    background-color: transparent;
+                }
+                &:focus,
+                &:active {
+                    outline: none;
+                    background-color: transparent;
+                }
+            }
+            &.active {
+                outline: none;
+                a {
+                    background-color: rgba(white, 0.3);
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    @media(min-width:768px) {
+        padding: 20px 0;
+        border-bottom: none;
+        letter-spacing: 1px;
+        background: transparent;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        &.top-nav-collapse {
+            padding: 0;
+            background: black;
+            border-bottom: 1px solid rgba(white, 0.3);
+        }
+    }
+}
+
+.intro {
+    display: table;
+    width: 100%;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    background-color: #111;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+        .brand-heading {
+            font-size: 40px;
+        }
+        .intro-text {
+            font-size: 18px;
+        }
+    }
+    @media(min-width:768px) {
+        height: 100%;
+        padding: 0;
+        .intro-body {
+            .brand-heading {
+                font-size: 100px;
+            }
+            .intro-text {
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+.btn-circle {
+    border: 2px solid white;
+    border-radius: 100% !important;
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    &:hover,
+    &:focus {
+        outline: none;
+        color: white;
+        background: rgba(white, 0.1);
+    }
+    i.animated {
+        transition-property: transform;
+        -webkit-transition-property: -webkit-transform;
+        transition-duration: 1s;
+        -webkit-transition-duration: 1s;
+        -moz-transition-property: -moz-transform;
+        -moz-transition-duration: 1s;
+    }
+    &:hover {
+        i.animated {
+            animation-name: pulse;
+            -webkit-animation-name: pulse;
+            -moz-animation-name: pulse;
+            animation-duration: 1.5s;
+            -webkit-animation-duration: 1.5s;
+            -moz-animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+        }
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {
+    from {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -moz-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.btn {
+    text-transform: uppercase;
+    font-family: $mono;
+    font-weight: 400;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    border-radius: 0;
+}
+
+.btn-default {
+    border: 1px solid $color-primary-0;
+    color: $color-primary-0;
+    background-color: transparent;
+    &:hover,
+    &:focus {
+        border: 1px solid $color-primary-0;
+        outline: none;
+        color: black;
+        background-color: $color-primary-0;
+    }
+}
+
+ul.banner-social-buttons {
+    margin-top: 0;
+    @media(max-width:1199px) {
+        margin-top: 15px;
+    }
+    @media(max-width:767px) {
+        li {
+            display: block;
+            margin-bottom: 20px;
+            padding: 0;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.table-hover {
+    tbody {
+        tr:hover {
+            background-color: lighten(#111, 15%);
+        }
+    }
+}
+
+.customers-table {
+    tr {
+        td {
+            font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
+        }
+    }
+}
+
+.full-details {
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    color: lime;
+    @include animation('fade-in .2s');
+    &.ng-hide-add-active {
+    @include animation('fade-out .2s');
+  }
+}
+
+.footer {
+    height: 2em;
+    padding-top: 200px;
+    margin: 0;
+}
+.mille {
+    font-size: 1rem;
+    color: cyan;
+    transition: text-shadow in-out 1s;
+    &:hover {
+        text-shadow: 1px 2px 0 rgba(255,255,255, 0.1)
+    }
+}
+
+.alerts {
+    &.ng-move,
+    &.ng-leave {
+        @include transition(opacity 500ms cubic-bezier(0.260, 0.225, 0.980, 0.280));
+        opacity: 1
+    }
+    &.ng-leave-active {
+        @include transition(opacity 500ms cubic-bezier(0.260, 0.225, 0.980, 0.280));
+        opacity: 0
+    }
+}
+
+.help-block {
+    margin: 0;
+    padding: 16px 0 0;
+    font-size: 12px;
+    font-family: $mono
+}

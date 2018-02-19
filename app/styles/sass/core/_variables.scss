@@ -1,3 +1,5 @@
+// Colors
+
 $primary: #42DCA3;
 $mono: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
 
@@ -12,3 +14,9 @@ $rgba-primary-1: rgba(169,218,255,1);
 $rgba-primary-2: rgba(121,197,255,1);
 $rgba-primary-3: rgba(  0, 79,139,1);
 $rgba-primary-4: rgba(  0, 61,107,1);
+
+// Fonts
+$f-core: 'Helvetica Neue', Helvetica, TeXGyreHeros, FreeSans, 'Nimbus Sans L', 'Liberation Sans', Helvetica, Arial, sans-serif;
+$f-heading: 'Neuton', 'Hoefler Text', 'Palatino', 'Baskerville', 'Georgia', 'Times New Roman', serif;
+$f-body: $f-core;
+$f-mono: $mono;
