@@ -1,6 +1,7 @@
 {
   "name": "dgm",
   "version": "0.0.2",
+  "engines" : { "node" : "6.9.1" },
   "dependencies": {
     "body-parser": "^1.17.2",
     "bunyan-request-logger": "^1.1.0",
@@ -65,8 +66,5 @@
     "tap": "^10.7.2",
     "time-grunt": "^1.0.0",
     "winston-mongodb": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=0.10.0"
   }
 }

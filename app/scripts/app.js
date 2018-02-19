@@ -8,11 +8,11 @@
             data: { pageTitle: 'Welcome' },
             controller: 'homeCtrl',
             controllerAs: 'ctrl'
-        }).state('contact', { // Contact Us
-            url: '/contact-us',
-            templateUrl: './views/contact.html',
-            data: { pageTitle: 'Contact Us' },
-            controller: 'contactCtrl',
+        }).state('github', { // Github demo
+            url: '/github-demo',
+            templateUrl: './views/github/github-demo.html',
+            data: { pageTitle: 'Github Demo' },
+            controller: 'githubCtrl',
             controllerAs: 'ctrl'
         })
         .state('customers', {
@@ -43,24 +43,14 @@
             controller: 'customersCreateCtrl',
             controllerAs: 'ctrl'
         })
-        .state('secrets', {
-            url: '/secrets',
-            templateUrl: './views/partials/secrets.html',
-            data: { pageTitle: 'Secrets' },
-            controller: 'homeCtrl',
-            controllerAs: 'ctrl'
-        })
+        // .state('secrets', {
+        //     url: '/secrets',
+        //     templateUrl: './views/partials/secrets.html',
+        //     data: { pageTitle: 'Secrets' },
+        //     controller: 'homeCtrl',
+        //     controllerAs: 'ctrl'
+        // })
         $urlRouterProvider.otherwise('/home');
     });
-
-    // *** debug the app by uncommenting these lines *** //
-
-    // dgmApp.config(function ($logProvider) {
-    //     $logProvider.debugEnabled(true);
-    // });
-
-    // dgmApp.run(['$rootScope', '$state', '$log', function ($rootScope, $state, $log) {
-    //     $rootScope.$state = $state;
-    // }]);
 
 })();

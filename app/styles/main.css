@@ -485,6 +485,13 @@ a {
   font-size: 12px;
   font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace; }
 
+.github-repo-details {
+  display: flex; }
+  .github-repo-details .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25%; }
+
 .d-pad {
   display: flex;
   flex-flow: row wrap;

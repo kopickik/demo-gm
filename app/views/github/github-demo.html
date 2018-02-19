@@ -1,0 +1,30 @@
+<h1>Github demo</h1>
+<div class="row" style="margin-bottom: 2em;">
+  <ng-form name="githubUserForm">
+      <div class="form-group">
+        <label for="githubUser" class="col-sm-2 control-label">Github Username</label>
+        <div class="col-sm-4">
+          <input type="text" ng-model="ghuser" ng-model-options="{ debounce: 800 }" class="form-control" placeholder="Enter a Github username"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class=" col-sm-2">
+          <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group" role="group">
+              <input type="submit" class="btn btn-primary" value="Lookup Repos" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-form>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div id="main-info" ng-include="'./views/github/main-info.html'">
+    </div>
+  </div>
+</div>

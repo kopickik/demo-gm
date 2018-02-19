@@ -266,3 +266,12 @@ a {
     font-size: 12px;
     font-family: $mono
 }
+
+.github-repo-details {
+  display: flex;
+  .avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 25%;
+  }
+}

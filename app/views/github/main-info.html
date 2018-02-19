@@ -1,0 +1,13 @@
+<div ng-if="!repos">
+  Loading repos...
+</div>
+
+<div class="github-repo-details">
+  <img class="avatar" ng-src="{{repos[0].owner.avatar_url}}" alt="user-avatar">
+  <ul class="repos">
+    <li ng-repeat="repo in repos">
+      <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+    </li>
+  </ul>
+</div>
+
