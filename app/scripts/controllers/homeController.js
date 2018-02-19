@@ -9,7 +9,7 @@
           stage.velocity({
             translateX: 0
           }, 1)
-        };
+        }
 
         function stageRight() {
           stage.velocity({
@@ -29,7 +29,7 @@
             backgroundPositionX: -200,
             backgroundPositionY: -580
           }, 1)
-        };
+        }
 
         function magitekInitializeW() {
           wedge.velocity({
@@ -37,7 +37,7 @@
             backgroundPositionX: -160,
             backgroundPositionY: -580
           }, 1)
-        };
+        }
 
         function walk() {
           wedge

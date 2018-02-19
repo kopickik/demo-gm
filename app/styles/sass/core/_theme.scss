@@ -15,10 +15,10 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #111;
+  background-color: rgba(22, 22, 22, 0.945);
   color: #fafafa;
-  font-size: 1.5rem;
-  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-family: $f-body;
 }
 
 a {
@@ -103,7 +103,7 @@ a {
     padding: 100px 0;
     text-align: center;
     color: white;
-    background-color: #111;
+    font-family: $f-heading;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -190,40 +190,6 @@ a {
     }
 }
 
-@-webkit-keyframes pulse {
-    from {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-
-    50% {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
-@-moz-keyframes pulse {
-    from {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-
-    50% {
-        -moz-transform: scale(1.2);
-        transform: scale(1.2);
-    }
-
-    100% {
-        -moz-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
 .btn {
     text-transform: uppercase;
     font-family: $mono;
@@ -247,47 +213,29 @@ a {
     }
 }
 
-ul.banner-social-buttons {
-    margin-top: 0;
-    @media(max-width:1199px) {
-        margin-top: 15px;
-    }
-    @media(max-width:767px) {
-        li {
-            display: block;
-            margin-bottom: 20px;
-            padding: 0;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
 .table-hover {
-    tbody {
-        tr:hover {
-            background-color: lighten(#111, 15%);
-        }
-    }
+  tbody {
+      tr:hover {
+          background-color: $rgba-primary-1
+      }
+  }
 }
 
 .customers-table {
-    tr {
-        td {
-            font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace;
-        }
-    }
+  tr {
+      td {
+          font-family: $f-mono
+      }
+  }
 }
 
 .full-details {
-    font-size: 1rem;
-    font-family: Arial, sans-serif;
-    color: lime;
-    @include animation('fade-in .2s');
-    &.ng-hide-add-active {
-    @include animation('fade-out .2s');
-  }
+  font-size: 1rem;
+  color: darkgrey;
+  @include animation('fade-in .2s');
+  &.ng-hide-add-active {
+  @include animation('fade-out .2s');
+}
 }
 
 .footer {

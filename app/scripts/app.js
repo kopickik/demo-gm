@@ -3,7 +3,7 @@
     var dgmApp = angular.module('dgmApp', ['ngAnimate', 'ngResource', 'ngCookies', 'ngSanitize', 'ngTouch', 'ui.router']);
     dgmApp.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', { // Home
-            url: 'home',
+            url: '/home',
             templateUrl: './views/home.html',
             data: { pageTitle: 'Welcome' },
             controller: 'homeCtrl',
