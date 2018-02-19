@@ -8,7 +8,8 @@ version 0.11.1.
 2. Run `bower install` to install client dependencies.
 3. Run `mkdir data/db` in the root of this app.
 4. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
-5. Run `npm start` in another terminal window to start our express API and kick off the connect web server.
+5. Run `npm run seed` to seed the database with some customers.
+5. Run `npm start` to start our express API and kick off the connect web server.
 
 ## Testing
 
