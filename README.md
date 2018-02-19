@@ -28,4 +28,4 @@ I may end up using $http instead of $resource in the `customersService.js` as $h
 
 ## Tips
 
-To force rebuild your styles while `grunt serve` is churning, you can open a separate terminal window and run `grunt sass && grunt build` to recreate the styles. The load order can be affected in `index.html`.
+To force rebuild your styles while `grunt serve` is churning, just save `main.scss`. The load order for styles can be affected in `index.html`.
