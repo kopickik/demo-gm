@@ -6,9 +6,9 @@ version 0.11.1.
 ## Build & development
 1. Run `npm install` to install project dependencies.
 2. Run `bower install` to install client dependencies.
-3. `mkdir data/db`
+3. Run `mkdir data/db` in the root of this app.
 4. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
-5. Run `grunt serve` in another terminal window to start our express API and kick off the connect web server.
+5. Run `npm start` in another terminal window to start our express API and kick off the connect web server.
 
 ## Testing
 

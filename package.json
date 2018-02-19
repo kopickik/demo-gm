@@ -2,6 +2,10 @@
   "name": "dgm",
   "version": "0.0.2",
   "engines" : { "node" : "6.9.1" },
+  "scripts": {
+    "start": "nodemon server.js && grunt serve",
+    "seed": "mongoimport --db dgm --collection customers --drop --file ./lib/db-export.json"
+  },
   "dependencies": {
     "body-parser": "^1.17.2",
     "bunyan-request-logger": "^1.1.0",

@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  function customersListCtrl($scope, $state, popupService, Customer, AlertsService) {
+  function customersListCtrl($scope, $state, $timeout, popupService, Customer, AlertsService) {
     $scope.customers = Customer.query(function (data) {
       // AlertsService.add('info', 'Fetched customers.', 'cubes', 1500)
     }, function (resp) {
@@ -21,7 +21,7 @@
         })
         .then((resp) => {
           AlertsService.add('success', resp.message, 'cut', 3000)
-          $scope.refresh();
+          $state.reload()
         })
       }
     };
