@@ -7,7 +7,7 @@
 
         function stageInitialize() {
           stage.velocity({
-            translateX: 0
+            translateX: 0, translateY: 0
           }, 1)
         }
 
@@ -20,6 +20,18 @@
         function stageLeft() {
           stage.velocity({
             translateX: '+=144px'// 36 x 4 steps + 36
+          }, { easing: 'linear', duration: 2500 });
+        }
+
+        function stageUp() {
+          stage.velocity({
+            translateY: '-=144px'// 36 x 4 steps + 36
+          }, { easing: 'linear', duration: 2500 });
+        }
+
+        function stageDown() {
+          stage.velocity({
+            translateY: '+=144px'// 36 x 4 steps + 36
           }, { easing: 'linear', duration: 2500 });
         }
 
@@ -39,7 +51,7 @@
           }, 1)
         }
 
-        function walk() {
+        function walkLR() {
           wedge
           .velocity({backgroundPositionY: [-660]}, {easing: [1], duration: 300})
           .velocity({backgroundPositionY: [-580]}, {easing: [1], duration: 100})
@@ -62,24 +74,69 @@
           }, 1)
         }
 
+        function walkS() {
+          wedge
+          .velocity({backgroundPositionX: -80, backgroundPositionY: -620}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -40}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -80}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -40}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -80}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -40}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -80}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -40}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionX: -80}, {easing: [1], duration: 300})
+          .velocity({
+            backgroundPositionX: 0,
+            backgroundPositionY: -580
+          }, 1)
+        }
+
+        function walkN() {
+          wedge
+          .velocity({backgroundPositionX: -120, backgroundPositionY: -580}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -620}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -660}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -620}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -660}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -620}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -660}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -620}, {easing: [1], duration: 300})
+          .velocity({backgroundPositionY: -660}, {easing: [1], duration: 300})
+          .velocity({
+            backgroundPositionX: 0,
+            backgroundPositionY: -580
+          }, 1)
+        }
+
         function walkEast() {
           magitekInitialize()
-          walk(stageLeft())
+          walkLR(stageLeft())
         }
 
         function walkWest() {
           magitekInitializeW()
-          walk(stageRight())
+          walkLR(stageRight())
+        }
+
+        function walkNorth() {
+          magitekInitialize()
+          walkN(stageUp())
+        }
+
+        function walkSouth() {
+          walkS(stageDown())
         }
 
         function initiateEntrance() {
           stageInitialize()
           magitekInitialize()
-          walk(stageLeft())
+          walkLR(stageLeft())
         }
 
         $scope.walkEast = walkEast;
         $scope.walkWest = walkWest;
+        $scope.walkNorth = walkNorth;
+        $scope.walkSouth = walkSouth;
         $scope.resetMagitek = stageInitialize;
         initiateEntrance();
     }

@@ -1,10 +1,31 @@
 .d-pad {
   display: flex;
-  height: 240px;
+  flex-flow: row wrap;
+  width: 240px;
 
-  .up,.left,.right,.down {
-    width: 100px;
-    height: 100px;
-    margin: auto;
+  & > * {
+    flex: 1 100%;
+  }
+
+  .up, .left, .right, .down {
+    background: royalblue;
+    text-align: center;
+    span {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover, &:focus {
+          color: midnightblue;
+        }
+    }
+  }
+  .left, .right {
+    background: blue;
+    flex: 1 auto;
+  }
+  .right {
+    background: orange;
+  }
+  .down {
+    background: purple;
   }
 }

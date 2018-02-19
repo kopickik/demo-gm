@@ -1,5 +1,5 @@
 {
-  "name": "DGM App",
+  "name": "dgm-app",
   "version": "2.0.1",
   "dependencies": {
     "bootstrap": "3.3.4",

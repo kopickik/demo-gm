@@ -215,18 +215,14 @@ a {
 
 .table-hover {
   tbody {
-      tr:hover {
-          background-color: $rgba-primary-1
-      }
+    tr:hover {
+      background-color: $color-primary-4
+    }
   }
 }
 
 .customers-table {
-  tr {
-      td {
-          font-family: $f-mono
-      }
-  }
+  font-family: $f-heading
 }
 
 .full-details {
@@ -234,8 +230,8 @@ a {
   color: darkgrey;
   @include animation('fade-in .2s');
   &.ng-hide-add-active {
-  @include animation('fade-out .2s');
-}
+    @include animation('fade-out .2s');
+  }
 }
 
 .footer {

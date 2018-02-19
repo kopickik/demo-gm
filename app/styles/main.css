@@ -433,10 +433,10 @@ a {
     background-color: #1097FF; }
 
 .table-hover tbody tr:hover {
-  background-color: #a9daff; }
+  background-color: #003D6B; }
 
-.customers-table tr td {
-  font-family: "Anonymous Pro for Powerline", "Menlo", "Monaco", "Courier New", monospace; }
+.customers-table {
+  font-family: "Neuton", "Hoefler Text", "Palatino", "Baskerville", "Georgia", "Times New Roman", serif; }
 
 .full-details {
   font-size: 1rem;
@@ -487,8 +487,22 @@ a {
 
 .d-pad {
   display: flex;
-  height: 240px; }
+  flex-flow: row wrap;
+  width: 240px; }
+  .d-pad > * {
+    flex: 1 100%; }
   .d-pad .up, .d-pad .left, .d-pad .right, .d-pad .down {
-    width: 100px;
-    height: 100px;
-    margin: auto; }
+    background: royalblue;
+    text-align: center; }
+    .d-pad .up span, .d-pad .left span, .d-pad .right span, .d-pad .down span {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out; }
+      .d-pad .up span:hover, .d-pad .up span:focus, .d-pad .left span:hover, .d-pad .left span:focus, .d-pad .right span:hover, .d-pad .right span:focus, .d-pad .down span:hover, .d-pad .down span:focus {
+        color: midnightblue; }
+  .d-pad .left, .d-pad .right {
+    background: blue;
+    flex: 1 auto; }
+  .d-pad .right {
+    background: orange; }
+  .d-pad .down {
+    background: purple; }
