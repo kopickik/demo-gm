@@ -43,13 +43,13 @@
             controller: 'customersCreateCtrl',
             controllerAs: 'ctrl'
         })
-        // .state('secrets', {
-        //     url: '/secrets',
-        //     templateUrl: './views/partials/secrets.html',
-        //     data: { pageTitle: 'Secrets' },
-        //     controller: 'homeCtrl',
-        //     controllerAs: 'ctrl'
-        // })
+        .state('secrets', {
+            url: '/secrets',
+            templateUrl: './views/partials/secrets.html',
+            data: { pageTitle: 'Secrets' },
+            controller: 'homeCtrl',
+            controllerAs: 'ctrl'
+        })
         $urlRouterProvider.otherwise('/home');
     });
 

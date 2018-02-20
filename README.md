@@ -6,10 +6,15 @@ version 0.11.1.
 ## Build & development
 1. Run `npm install` to install project dependencies.
 2. Run `bower install` to install client dependencies.
+3. Copy `.env.json.defaults` to `.env.json`.
 3. Run `mkdir data/db` in the root of this app.
 4. Run `mongod --dbpath ./data/db` in one terminal window to start the database.
-5. Run `npm run seed` to seed the database with some customers.
-5. Run `npm start` to start our express API and kick off the connect web server.
+    *Unable to run mongod locally*?  [Email me](mailto:spoonfedweb+ghrmtrap@gmail.com) and request cloud database credentials.
+    Or, create a cluster yourself at [cloud.mongodb.com](https://cloud.mongodb.com) and
+    copy your own mongodb connection credentials to `.env.json`.
+5. Run `nodemon server.js` to start our express API and kick off the connect web server.
+6. In a separate terminal window, run `grunt serve` to wire dependencies, start livereload, and 
+    give you a nice seamless development experience.  The app should fire up at `localhost:9000`.
 
 ## Testing
 
