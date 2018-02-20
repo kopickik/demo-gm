@@ -38,7 +38,9 @@ a {
     .navbar-toggle {
         padding: 4px 6px;
         font-size: 16px;
-        color: white;
+        .icon-bar {
+            background-color: #fafafa;
+        }
         &:focus,
         &:active {
             outline: none;

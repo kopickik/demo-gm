@@ -1,9 +1,11 @@
 {
   "name": "dgm",
   "version": "0.0.2",
-  "engines" : { "node" : "6.9.1" },
+  "engines": {
+    "node": "6.9.1"
+  },
   "scripts": {
-    "start": "nodemon server.js && grunt serve",
+    "start": "nodemon server.js & grunt serve",
     "seed": "mongoimport --db dgm --collection customers --drop --file ./lib/db-export.json"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-error-handler": "^1.1.0",
+    "grunt-cli": "^1.2.0",
     "grunt-nodemon": "^0.4.2",
     "helmet": "^3.6.1",
     "http": "0.0.0",

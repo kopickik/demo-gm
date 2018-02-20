@@ -300,8 +300,9 @@ a {
   background-color: black; }
   .navbar-custom .navbar-toggle {
     padding: 4px 6px;
-    font-size: 16px;
-    color: white; }
+    font-size: 16px; }
+    .navbar-custom .navbar-toggle .icon-bar {
+      background-color: #fafafa; }
     .navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:active {
       outline: none; }
   .navbar-custom .navbar-brand {
